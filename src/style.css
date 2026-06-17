@@ -173,7 +173,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('./hero-bg.png');
+  background-image: url('./images/hero-bg.png');
   background-size: cover;
   background-position: center;
   z-index: -2;
@@ -248,7 +248,7 @@ p {
 .wood-accent-panel {
   width: 100%;
   height: 600px;
-  background: linear-gradient(135deg, var(--color-wood) 0%, var(--color-wood-dark) 100%);
+  background-image: url("./images/nature.png");
   border-radius: 2px;
   box-shadow: 20px 20px 0px rgba(17, 17, 17, 0.05);
 }
