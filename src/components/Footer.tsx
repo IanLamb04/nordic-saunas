@@ -1,34 +1,25 @@
-import React from 'react';
-
-const Footer: React.FC = () => {
-  return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-grid">
-          <div>
-            <h3>NORDIC SAUNAS</h3>
-            <p>Modern luxury meets artisanal wellness.</p>
-          </div>
-          <div>
-            <h4>Explore</h4>
-            <ul>
-              <li><a href="#about">Philosophy</a></li>
-              <li><a href="#craftsmanship">Craftsmanship</a></li>
-              <li><a href="#materials">Materials</a></li>
-            </ul>
-          </div>
-          <div>
-            <h4>Contact</h4>
-            <p>info@rayssaunas.com</p>
-            <p>Follow us on Instagram</p>
-          </div>
-        </div>
-        <div className="footer-bottom">
-          <p>&copy; 2026 Nordic Saunas. All rights reserved.</p>
-        </div>
+const Footer = () => (
+  <footer className="border-t border-white/5 bg-charcoal py-12">
+    <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 md:flex-row lg:px-10">
+      <p className="font-display text-lg text-cream">
+        Nordic<span className="text-warm">.</span>
+      </p>
+      <p className="text-xs text-cream/30">
+        © {new Date().getFullYear()} Nordic Saunas. Crafted with intention.
+      </p>
+      <div className="flex gap-8">
+        {["Instagram", "Pinterest", "Houzz"].map((social) => (
+          <a
+            key={social}
+            href="#"
+            className="text-[10px] uppercase tracking-[0.2em] text-cream/40 transition hover:text-warm"
+          >
+            {social}
+          </a>
+        ))}
       </div>
-    </footer>
-  );
-};
+    </div>
+  </footer>
+);
 
 export default Footer;
