@@ -1,45 +1,123 @@
 @import "tailwindcss";
 
 @theme {
-  --font-industrial: "Inder", system-ui, sans-serif;
-  --font-organic: "Cormorant Garamond", Georgia, serif;
-  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --font-display: "Crimson Pro", Georgia, serif;
+  --font-sans: "Poppins", system-ui, sans-serif;
+
+  --color-ink: #231f20;
+  --color-cream: #fffeed;
+  --color-sand: #d5d4bc;
+  --color-ink-2: #3f584d;
+  --color-ink-3: #97b1b3;
+  --color-ink-4: #72341a;
 }
 
-@layer base {
-  html {
-    scroll-behavior: smooth;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  body {
-    @apply bg-black text-stone-200 antialiased;
-    font-family: var(--font-industrial);
-  }
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+}
 
-  ::selection {
-    @apply bg-amber-950/60 text-stone-100;
+.heading-display {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.37rem + 3.91vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+}
+
+.heading-section {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 1.81rem + 1.96vw, 3.375rem);
+  font-weight: 400;
+  line-height: 1.15;
+}
+
+.heading-label {
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 0.83rem + 0.22vw, 1rem);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.italic-accent {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 300;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: clamp(0.875rem, 0.83rem + 0.22vw, 1rem);
+  font-weight: 500;
+  padding: 12px 24px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-cream {
+  background-color: var(--color-cream);
+  color: var(--color-ink);
+}
+
+.btn-cream:hover {
+  background-color: var(--color-sand);
+}
+
+.btn-ink {
+  background-color: var(--color-ink);
+  color: var(--color-cream);
+}
+
+.btn-ink:hover {
+  background-color: #3a3536;
+}
+
+.btn-outline-cream {
+  border: 1px solid var(--color-cream);
+  color: var(--color-cream);
+  background: transparent;
+}
+
+.btn-outline-cream:hover {
+  background-color: rgba(255, 254, 237, 0.1);
+}
+
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 6%;
+  padding: 0 6% 1rem;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-slide {
+  flex: 0 0 min(85vw, 520px);
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .carousel-slide {
+    flex: 0 0 calc(50% - 1rem);
   }
 }
 
-@layer utilities {
-  .font-industrial {
-    font-family: var(--font-industrial);
-  }
-
-  .font-organic {
-    font-family: var(--font-organic);
-  }
-
-  .font-mono-industrial {
-    font-family: var(--font-mono);
-  }
-
-  .section-pad {
-    @apply px-6 py-20 lg:px-16 lg:py-24;
-  }
-
-  .section-label {
-    font-family: var(--font-mono);
-    @apply text-[11px] uppercase tracking-[0.2em] text-zinc-500;
+@media (min-width: 1280px) {
+  .carousel-slide {
+    flex: 0 0 calc(33.333% - 1.35rem);
   }
 }
